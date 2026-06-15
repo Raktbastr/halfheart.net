@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="style.css">
-    <script src="header.js" defer></script>
-    <style>
-        .row {
-            display: flex;
-            align-items: center;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-        .column {
-            flex: 50%;
-            align-items: center;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        img {
-            display: block;
-            margin: auto;
-        }
-    </style>
-    <site-header></site-header>
-  </head>
-  <body>
-    <div class="row">
-        <div class="column">
-            <h1>Welcome to Halfheart.net!</h1>
-            <p style="text-align: center;">Welcome to Halfheart.net! This website is home to the Halfheart minecraft servers, my personal projects, and really anything else I want. Have fun.</p>
-            <br>
-            <p style="text-align: center;">This page is actively being worked on! Most things are probobly broken or incomplete. Don't tell me that they are, I know.</p>
-        </div>
-    </div>
-    <div class="row">
-        <iframe width="560" height="315" style="margin-left: auto; margin-right: auto;" src="https://www.youtube.com/embed/BuKft9LpL_0?si=ZBioDC66lEvgbuIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-  </body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Home | Halfheart.net</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" href="style.css">
+	<script src="header.js" defer></script>
+	<site-header></site-header>
+</head>
+
+<body>
+	<div class="row"
+		style="background-color: #4b4b5a; border-radius: 64px; padding: 20px; max-width: 1000px; margin: 0 auto;">
+		<div class="column" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
+			<img src="media/bonard.jpg" alt="Bonard" style="max-width: 256px; max-height: 256px; border-radius: 50%;"
+				width="100%" height="100%">
+		</div>
+		<br>
+		<div class="column">
+			<h1>Welcome to Halfheart.net!</h1>
+			<p>Welcome to Halfheart.net! I am Raktbastr; I make a lot of random coding projects and do a lot of assorted
+				things. This website serves as the home for them, as well as my minecraft servers which are mostly open
+				to the
+				public. For access go to the <a href="minecraft-servers.html">minecraft server page</a>. Have fun!</p>
+			<h2>Contact</h2>
+			<p>Feel free to contact me!<br><br>Discord: raktbastr101<br>Email: raktbastr@halfheart.net</p>
+		</div>
+	</div>
+	<div class="row" style="height: 315px; justify-content: center;">
+		<div class="column" style="width: 100%; max-width: 560px; height: 100%;">
+			<iframe style="width: 100%; aspect-ratio: 16 / 9; border: 5px solid red;"
+				src="https://www.youtube.com/embed/BuKft9LpL_0?si=ZBioDC66lEvgbuIg" title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+	</div>
+</body>
+<site-footer></site-footer>
+
 </html>

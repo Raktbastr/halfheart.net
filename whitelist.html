@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Whitelist User | Halfheart.net</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <script src="header.js" defer></script>
+    <site-header></site-header>
+</head>
+<script>
+    function whitelistUser() {
+        var username = document.getElementById(username);
+        var edition;
+        if (document.getElementById(java).checked) {
+            edition = java;
+        } else {
+            edition = bedrock;
+        }
+    }
+</script>
+
+<body>
+    <h1>Whitelist User</h1>
+    <p>Enter your username and Minecraft version below to be added to the server whitelist</p>
+    <div class="row">
+        <div class="column">
+            <div class="form-container">
+                <form onsubmit="whitelistUser(event)">
+                    <label for="username">Username or Gamertag</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username..." required>
+
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" id="java" name="job" value="java">
+                            Java Edition
+                        </label>
+                        <label>
+                            <input type="radio" id="bedrock" name="job" value="bedrock">
+                            Bedrock Edition
+                        </label>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<site-footer></site-footer>
+
+</html>

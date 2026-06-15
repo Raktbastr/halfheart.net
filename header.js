@@ -10,8 +10,27 @@ class SiteHeader extends HTMLElement {
 }
 customElements.define('site-header', SiteHeader);
 
+class SiteFooter extends HTMLElement {
+    connectedCallback() {
+        fetch("site-footer.html")
+            .then(response => response.text())
+            .then(html => {
+                this.innerHTML = html;
+            })
+    }
+}
+customElements.define('site-footer', SiteFooter)
+
 function detectPage() {
-    var pageId = document.title.toLowerCase().replace(/ /g, "-"); 
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    
+    if (page === "" || page === "index.html") {
+        var pageId = "home";
+    } else {
+        var pageId = page.replace(".html", "");
+    }
+    
     var element = document.getElementById(pageId);
     if (element) {
         element.className = "active";
