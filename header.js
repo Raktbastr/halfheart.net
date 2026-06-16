@@ -25,7 +25,7 @@ function detectPage() {
     var path = window.location.pathname;
     var page = path.split("/").pop();
     
-    if (page === "" || page === "index.html") {
+    if (page === "" || page === "index.html" || page === "index" || path === "/") {
         var pageId = "home";
     } else {
         var pageId = page.replace(".html", "");
