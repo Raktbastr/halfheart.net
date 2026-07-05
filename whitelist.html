@@ -15,13 +15,30 @@
     <site-header></site-header>
 </head>
 <script>
-    function whitelistUser() {
-        var username = document.getElementById(username);
-        var edition;
-        if (document.getElementById(java).checked) {
-            edition = java;
-        } else {
-            edition = bedrock;
+    async function whitelistUser(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const edition = document.getElementById("java").checked ? "java"
+            : document.getElementById("bedrock").checked ? "bedrock"
+                : null;
+
+        if (!username || !edition) {
+            alert("Please enter a username and select Java or Bedrock");
+            return;
+        }
+
+        try {
+            const resp = await fetch("127.0.0.1:5000/api/whitelist", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, edition }),
+            });
+
+            if (!resp.ok) throw new Error(await resp.text());
+            alert("Whitelist request sent!");
+        } catch (err) {
+            alert("Error: " + err.message);
         }
     }
 </script>
@@ -31,14 +48,12 @@
     <div class="row">
         <div class="column">
             <p>Enter your username and Minecraft version below to be added to the server whitelist</p>
-            <h2>THIS CURRENTLY DOES NOT WORK. I AM WORKING ON IT</h2>
         </div>
         <div class="column">
             <div class="form-container">
                 <form onsubmit="whitelistUser(event)">
                     <label for="username">Username or Gamertag</label>
                     <input type="text" name="username" id="username" placeholder="Enter username..." required>
-
                     <div class="radio-group">
                         <label>
                             <input type="radio" id="java" name="job" value="java">
