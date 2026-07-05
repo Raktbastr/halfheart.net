@@ -29,7 +29,7 @@
         }
 
         try {
-            const resp = await fetch("127.0.0.1:5000/api/whitelist", {
+            const resp = await fetch("/api/whitelist", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ username, edition }),
